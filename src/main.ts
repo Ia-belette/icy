@@ -1,1 +1,3 @@
-console.log("Hello World 2");
+import { WookaFRScraper } from "./scrapers/index.ts";
+
+const query = "Taylor Swift";
