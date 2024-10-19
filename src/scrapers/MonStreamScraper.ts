@@ -1,24 +1,24 @@
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
 import { BaseScraper } from "./BaseScraper.ts";
 
-export class NightFlixScraper extends BaseScraper {
+export class MonStreamScraper extends BaseScraper {
   constructor() {
-    super("nightflix", "https://nightflix.fun/search_ajax.php");
+    super("monstream", "https://monstream.rest/f/l.title=");
   }
 
   buildSearchUrl(query: string) {
-    return `${this.base_url}?search=${encodeURIComponent(query)}`;
+    return `${this.base_url}${encodeURIComponent(query)}/sort=date/order=desc/`;
   }
 
   parseHTML(html: string) {
     const $ = cheerio.load(html);
 
-    const films = $("div.search-result")
+    const films = $("div.movie-item")
       .map((_, element) => {
         const $element = $(element);
         const link = $element.find("a").attr("href");
-        const title = $element.find("p").text().trim();
-        const image = $element.find("img").attr("src");
+        const title = $element.find("a.movie-title").text().trim();
+        const image = $element.find("img").attr("data-src");
 
         return link && title && image
           ? {

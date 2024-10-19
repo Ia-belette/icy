@@ -6,3 +6,6 @@ export * from "./Jour1FilmScraper.ts";
 export * from "./MegaStreamScraper.ts";
 export * from "./NightFlixScraper.ts";
 export * from "./XalaflixScraper.ts";
+export * from "./SeeFrenchScraper.ts";
+export * from "./TopStreamingScraper.ts";
+export * from "./SenpaiStreamScraper.ts";
