@@ -5,7 +5,7 @@ export class MegaStreamScraper extends BaseScraper {
   constructor() {
     super("megastream", "https://megastream.autos/index.php");
   }
-  //   ?do=search&subaction=search&search_start=0&full_search=0&result_from=1&story=taylor+swift
+
   buildSearchUrl(query: string): string {
     return `${
       this.base_url

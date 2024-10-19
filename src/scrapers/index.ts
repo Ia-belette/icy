@@ -4,3 +4,4 @@ export * from "./PrincessFilmsScraper.ts";
 export * from "./CoflixScraper.ts";
 export * from "./Jour1FilmScraper.ts";
 export * from "./MegaStreamScraper.ts";
+export * from "./NightFlixScraper.ts";
