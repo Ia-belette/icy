@@ -1,9 +1,9 @@
-import { MegaStreamScraper, NightFlixScraper } from "./scrapers/index.ts";
+import {
+  XalaflixScraper,
+} from "./scrapers/index.ts";
 
 const query = "Taylor Swift";
 
-const megastream = new MegaStreamScraper();
-const nightflix = new NightFlixScraper();
+const xalaflix = new XalaflixScraper();
 
-console.log(await megastream.scrape(query));
-console.log(await nightflix.scrape(query));
+console.log(await xalaflix.scrape(query));
