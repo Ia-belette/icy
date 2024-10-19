@@ -1,3 +1,4 @@
 export * from "./WookaScraper.ts";
 export * from "./GuinchezScraper.ts";
-export * from "./PrincessFilmScraper.ts";
+export * from "./PrincessFilmsScraper.ts";
+export * from "./CoflixScraper.ts";
