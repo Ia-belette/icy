@@ -1,3 +1,3 @@
-import {} from "./scrapers/index.ts";
+import { } from "./scrapers/index.ts";
 
 const query = "Taylor Swift";
