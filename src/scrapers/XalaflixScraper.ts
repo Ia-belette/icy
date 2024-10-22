@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class XalaflixScraper extends BaseScraper {
   constructor() {
-    super("xalaflix", "https://xalaflix.eu/search_elastic");
+    super("XALAFLIX", "https://xalaflix.eu/search_elastic");
   }
 
   buildSearchUrl(query: string) {

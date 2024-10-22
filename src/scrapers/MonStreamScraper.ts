@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class MonStreamScraper extends BaseScraper {
   constructor() {
-    super("monstream", "https://monstream.rest/f/l.title=");
+    super("MONSTREAM", "https://monstream.rest/f/l.title=");
   }
 
   buildSearchUrl(query: string) {

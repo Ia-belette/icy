@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class NightFlixScraper extends BaseScraper {
   constructor() {
-    super("nightflix", "https://nightflix.fun/search_ajax.php");
+    super("NIGHTFLIX", "https://nightflix.fun/search_ajax.php");
   }
 
   buildSearchUrl(query: string) {

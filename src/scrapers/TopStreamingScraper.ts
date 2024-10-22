@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class TopStreamingScraper extends BaseScraper {
   constructor() {
-    super("topstreaming", "https://top-stream.tv/search/");
+    super("Topstream", "https://top-stream.tv/search/");
   }
 
   buildSearchUrl(query: string) {

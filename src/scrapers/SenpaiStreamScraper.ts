@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class SenpaiStreamScraper extends BaseScraper {
   constructor() {
-    super("senpai-stream", "https://senpai-stream.net/search/");
+    super("SENPAI-STREAM", "https://senpai-stream.net/search/");
   }
 
   buildSearchUrl(query: string) {

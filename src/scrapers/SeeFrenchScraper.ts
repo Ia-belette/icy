@@ -2,7 +2,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class SeeFrenchScraper extends BaseScraper {
   constructor() {
-    super("seefrench", "https://seefrench.pro/api/movie/search");
+    super("SeeFrench", "https://seefrench.pro/api/movie/search");
   }
 
   buildSearchUrl(query: string) {

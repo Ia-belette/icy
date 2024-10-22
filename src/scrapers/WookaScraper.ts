@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class WookaFRScraper extends BaseScraper {
   constructor() {
-    super("wookafr", "https://ww1.wookafr.org/");
+    super("Wookafr", "https://ww1.wookafr.org/");
   }
 
   buildSearchUrl(query: string) {

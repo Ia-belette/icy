@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class MegaStreamScraper extends BaseScraper {
   constructor() {
-    super("megastream", "https://megastream.autos/index.php");
+    super("Megastream", "https://megastream.autos/index.php");
   }
 
   buildSearchUrl(query: string): string {

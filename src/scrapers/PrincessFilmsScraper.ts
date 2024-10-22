@@ -3,7 +3,7 @@ import { BaseScraper } from "./BaseScraper.ts";
 
 export class PrincessFilmsScraper extends BaseScraper {
   constructor() {
-    super("filmsdeprincess", "https://filmsdeprincesse.org/");
+    super("Princess", "https://filmsdeprincesse.org/");
   }
 
   buildSearchUrl(query: string) {
