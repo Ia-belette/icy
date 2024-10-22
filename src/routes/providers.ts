@@ -35,14 +35,6 @@ router.get("/search/:query/:provider", async (req: Request, res: Response) => {
   const query = req.params.query;
   const providers = req.params.provider.split(",");
 
-  console.log(
-    query,
-    "Recherche pour:",
-    providers,
-    "providers.length",
-    providers.length
-  );
-
   if (providers.length > MAX_PROVIDERS) {
     return res.status(400).json({
       error: `Trop de providers demandés. Maximum autorisé : ${MAX_PROVIDERS}`,
@@ -70,7 +62,12 @@ router.get("/search/:query/:provider", async (req: Request, res: Response) => {
       }): item is NonNullable<typeof item> => item != null
     );
 
-  console.log("Résultats finaux:", flattenedResults);
+  console.group("Détails de la recherche");
+  console.info(`Recherche: ${query}`);
+  console.info(`Providers: ${providers.join(", ")}`);
+  console.info(`Résultats: ${flattenedResults.length}`);
+  console.groupEnd();
+
   res.json(flattenedResults);
 });
 
@@ -80,5 +77,11 @@ function callScraper(provider: string, query: string) {
     console.warn(`Scraper non implémenté pour ${provider}`);
     return Promise.resolve([]);
   }
+
+  if (provider === "seefrench") {
+    // @ts-expect-error fetchMovies is not present in the BaseScraper class
+    return scraper.fetchMovies(query);
+  }
+
   return scraper.scrape(query);
 }
