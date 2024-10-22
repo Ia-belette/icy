@@ -14,17 +14,17 @@ import {
 } from "../scrapers/index.ts";
 
 const scrapers = {
-  coflix: new CoflixScraper(),
-  jour1film: new Jour1FilmScraper(),
-  nightflix: new NightFlixScraper(),
   seefrench: new SeeFrenchScraper(),
-  monstream: new MegaStreamScraper(),
+  coflix: new CoflixScraper(),
+  nightflix: new NightFlixScraper(),
   xalaflix: new XalaflixScraper(),
-  guinchez: new GuinchezScraper(),
-  princessfilms: new PrincessFilmsScraper(),
   senpai: new SenpaiStreamScraper(),
   topstreaming: new TopStreamingScraper(),
   wookafr: new WookaFRScraper(),
+  monstream: new MegaStreamScraper(),
+  guinchez: new GuinchezScraper(),
+  jour1film: new Jour1FilmScraper(),
+  princessfilms: new PrincessFilmsScraper(),
 };
 
 const MAX_PROVIDERS = 7;
