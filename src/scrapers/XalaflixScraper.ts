@@ -12,8 +12,9 @@ export class XalaflixScraper extends BaseScraper {
 
   parseHTML(html: string) {
     const $ = cheerio.load(html);
-
-    const films = $("div.single-video")
+    const filmsSection = $("div.vfx-item-section:contains('Films')").parent();
+    const films = filmsSection
+      .find("div.single-video")
       .map((_, element) => {
         const $element = $(element);
         const link = $element.find("a").attr("href");
