@@ -23,7 +23,7 @@ export class SeeFrenchScraper extends BaseScraper {
       return data.map(
         (movie: { id: string; title: string; poster_url: string }) => ({
           title: movie.title,
-          link: `https://seefrench.pro/movies/${movie.id}`,
+          link: `https://seefrench.pro/watch/movie?id=${movie.id}`,
           image: movie.poster_url,
           site_name: this.site_name,
         })
