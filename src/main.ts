@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from "npm:express@4.18.2";
 import { router } from "./routes/providers.ts";
+import { router as searchRouter } from "./routes/search.ts";
 const app = express();
 
 const sites = [
@@ -25,5 +26,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 app.use("/", router);
+app.use("/v1", searchRouter);
 
 app.listen(8000);

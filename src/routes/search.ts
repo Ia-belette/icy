@@ -27,15 +27,13 @@ const scrapers = {
   princessfilms: new PrincessFilmsScraper(),
 };
 
-const MAX_PROVIDERS = 7;
 
 export const router = Router();
 
-router.get("/search/:query/:provider", async (req: Request, res: Response) => {
+router.get("/search/:query", async (req: Request, res: Response) => {
   const query = req.params.query;
-  const providers = req.params.provider.split(",");
 
-  const scraperPromises = providers.map((provider: string) =>
+  const scraperPromises = Object.keys(scrapers).map((provider) =>
     callScraper(provider, query)
       .then((result) => result || [])
       .catch((error) => {
@@ -58,7 +56,6 @@ router.get("/search/:query/:provider", async (req: Request, res: Response) => {
 
   console.group("Détails de la recherche");
   console.info(`Recherche: ${query}`);
-  console.info(`Providers: ${providers.join(", ")}`);
   console.info(`Résultats: ${flattenedResults.length}`);
   console.groupEnd();
 
